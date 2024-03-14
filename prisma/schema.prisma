@@ -1,0 +1,74 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Video {
+  id          String    @id @default(cuid())
+  title       String
+  description String
+  sport       Sport    @relation(fields: [sportId], references: [id])
+  sportId     String
+  highlights  String[]
+  youtubeId   String?
+
+  tournament  Tournament? @relation(fields: [tournamentId], references: [id])
+  tournamentId String?
+  
+  arena       Arena?    @relation(fields: [arenaId], references: [id])
+  arenaId     String?
+}
+
+
+model Sport {
+  id          String    @id @default(cuid())
+  name        String
+  description String
+  videos      Video[]  
+  teachers    Teacher[] @relation("TeacherSports")
+}
+
+model Tournament {
+  id          String    @id @default(cuid())
+  title       String
+  description String
+  location    String
+  sportId     String
+  videos      Video[]  
+  arenas    Arena[]   @relation("TournamentArenas")
+  date        DateTime?
+}
+
+model Arena {
+  id          String    @id @default(cuid())
+  title       String
+  location    String
+  information String?  
+  videos      Video[]
+ tournaments Tournament[] @relation("TournamentArenas")
+}
+
+
+model Teacher {
+  id           String    @id @default(cuid())
+  name         String
+  email        String    @unique 
+  description  String?
+  formation    String
+  phoneNumber  String
+  facebook     String?
+  whatsapp     String?
+  messenger    String?
+  instagram    String?
+  sports       Sport[]   @relation("TeacherSports")
+}
