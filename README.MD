@@ -33,3 +33,10 @@ SmashTV é uma plataforma que permite aos usuários assistir a uma ampla varieda
 ## Backend
 
 Para rodar o backend precisamos seguir alguns passos para que o funcionamento ocorra de forma correta.
+
+### Docker
+
+0. Baixe a imagem PostgreSQL
+1. Rode um novo Container do Docker `docker run --name SmashTv -p 5455:5432 -e POSTGRES_USER=usuarioexemplo -e POSTGRES_PASSWORD=senhaexemplo -e POSTGRES_DB=postgresDB`
+2. Inicialize o Container com o comando `docker run -d -p 5455:5432 SmashTv`
+3. Crie um arquivo .env e defina as variáveis da ambiente e valores conforme o arquivo .env.example

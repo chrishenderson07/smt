@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -14,61 +8,49 @@ datasource db {
 }
 
 model Video {
-  id          String    @id @default(cuid())
-  title       String
-  description String
-  sport       Sport    @relation(fields: [sportId], references: [id])
-  sportId     String
-  highlights  String[]
-  youtubeId   String?
-
-  tournament  Tournament? @relation(fields: [tournamentId], references: [id])
+  id           String      @id @default(cuid())
+  title        String
+  description  String
   tournamentId String?
-  
-  arena       Arena?    @relation(fields: [arenaId], references: [id])
-  arenaId     String?
+  arenaId      String?
+  highlights   String[]
+  sportId      String
+  youtubeId    String?
+  arena        Arena?      @relation(fields: [arenaId], references: [id])
+  sport        Sport       @relation(fields: [sportId], references: [id])
+  tournament   Tournament? @relation(fields: [tournamentId], references: [id])
 }
 
-
 model Sport {
-  id          String    @id @default(cuid())
+  id          String  @id @default(cuid())
   name        String
   description String
-  videos      Video[]  
-  teachers    Teacher[] @relation("TeacherSports")
+  videos      Video[]
 }
 
 model Tournament {
   id          String    @id @default(cuid())
-  title       String
   description String
   location    String
   sportId     String
-  videos      Video[]  
-  arenas    Arena[]   @relation("TournamentArenas")
+  title       String
   date        DateTime?
+  videos      Video[]
+  arenas      Arena[]   @relation("TournamentArenas")
 }
 
 model Arena {
-  id          String    @id @default(cuid())
-  title       String
+  id          String       @id @default(cuid())
   location    String
-  information String?  
+  information String?
+  title       String
   videos      Video[]
- tournaments Tournament[] @relation("TournamentArenas")
+  tournaments Tournament[] @relation("TournamentArenas")
 }
 
-
 model Teacher {
-  id           String    @id @default(cuid())
-  name         String
-  email        String    @unique 
-  description  String?
-  formation    String
-  phoneNumber  String
-  facebook     String?
-  whatsapp     String?
-  messenger    String?
-  instagram    String?
-  sports       Sport[]   @relation("TeacherSports")
+  id          String  @id @default(cuid())
+  name        String
+  email       String  @unique
+  description String?
 }
