@@ -1,6 +1,7 @@
 # SmashTV
 
 Bem-vindo ao SmashTV, uma aplicação web para assistir jogos esportivos ao vivo!
+![Mockup](https://raw.githubusercontent.com/chrishenderson07/smt/main/public/Mockup%20SmashTV.png)
 
 ## Visão Geral
 
@@ -37,7 +38,14 @@ Para rodar o backend precisamos seguir alguns passos para que o funcionamento oc
 ### Docker
 
 0. Baixe a imagem PostgreSQL
-1. Rode um novo Container do Docker `docker run --name SmashTvTest -p 5432:5432 -e POSTGRES_USER=usuarioexemplo -e POSTGRES_PASSWORD=senhaexemplo -e POSTGRES_DB=postgresDB postgres`
+1. Rode um novo Container do Docker
+
+```bash
+  bash docker run --name SmashTvTest -p 5432:5432
+  -e POSTGRES_USER=usuarioexemplo -e POSTGRES_PASSWORD=senhaexemplo
+  -e POSTGRES_DB=postgresDB postgres
+```
+
 2. Inicialize o Container com o comando `docker run -d -p 5432:5432 SmashTvTest`
 3. Crie um arquivo .env e defina as variáveis da ambiente e valores conforme o arquivo .env.example
 
