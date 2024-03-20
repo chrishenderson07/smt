@@ -49,6 +49,66 @@ Para rodar o backend precisamos seguir alguns passos para que o funcionamento oc
 2. Inicialize o Container com o comando `docker run -d -p 5432:5432 SmashTvTest`
 3. Crie um arquivo .env e defina as variáveis da ambiente e valores conforme o arquivo .env.example
 
+### Model
+
+Documentação do Schema de Modelos
+
+#### Model: Video
+
+- **id**: Identificador único do vídeo.
+- **title**: Título do vídeo.
+- **description**: Descrição do vídeo.
+- **sport**: Esporte associado ao vídeo.
+- **sportId**: ID do esporte associado.
+- **highlights**: Destaques do vídeo.
+- **youtubeId**: ID do vídeo no YouTube (opcional).
+- **tournament**: Torneio associado ao vídeo (opcional).
+- **tournamentId**: ID do torneio associado (opcional).
+- **arena**: Arena associada ao vídeo (opcional).
+- **arenaId**: ID da arena associada (opcional).
+
+#### Model: Sport
+
+- **id**: Identificador único do esporte.
+- **name**: Nome do esporte.
+- **description**: Descrição do esporte.
+- **videos**: Lista de vídeos associados ao esporte.
+- **teachers**: Lista de professores associados ao esporte.
+
+#### Model: Tournament
+
+- **id**: Identificador único do torneio.
+- **title**: Título do torneio.
+- **description**: Descrição do torneio.
+- **location**: Localização do torneio.
+- **sportId**: ID do esporte associado.
+- **videos**: Lista de vídeos associados ao torneio.
+- **arenas**: Lista de arenas associadas ao torneio.
+- **date**: Data do torneio (opcional).
+
+#### Model: Arena
+
+- **id**: Identificador único da arena.
+- **title**: Título da arena.
+- **location**: Localização da arena.
+- **information**: Informações adicionais sobre a arena (opcional).
+- **videos**: Lista de vídeos associados à arena.
+- **tournaments**: Lista de torneios associados à arena.
+
+#### Model: Teacher
+
+- **id**: Identificador único do professor.
+- **name**: Nome do professor.
+- **email**: Endereço de e-mail do professor (único).
+- **description**: Descrição do professor (opcional).
+- **formation**: Formação acadêmica do professor.
+- **phoneNumber**: Número de telefone do professor.
+- **facebook**: Perfil do Facebook do professor (opcional).
+- **whatsapp**: Número de WhatsApp do professor (opcional).
+- **messenger**: ID do Messenger do professor (opcional).
+- **instagram**: Perfil do Instagram do professor (opcional).
+- **sports**: Lista de esportes associados ao professor.
+
 ### Seed
 
 Para popular o banco de dados inicialmente, você pode usar o arquivo Seed.ts na pasta Prisma.
