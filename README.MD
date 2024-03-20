@@ -18,8 +18,8 @@ SmashTV é uma plataforma que permite aos usuários assistir a uma ampla varieda
 ## Tecnologias Utilizadas
 
 - **Frontend:** NextJS, Typescript, TailwindCSS
-- **Backend:** Node.js, Typescript, Prisma
-- **Banco de Dados:** PostgreSQL
+- **Backend:** Node.js, Typescript
+- **Banco de Dados:** PostgreSQL, Prisma
 
 ## Instalação do Projeto
 
@@ -37,6 +37,12 @@ Para rodar o backend precisamos seguir alguns passos para que o funcionamento oc
 ### Docker
 
 0. Baixe a imagem PostgreSQL
-1. Rode um novo Container do Docker `docker run --name SmashTv -p 5455:5432 -e POSTGRES_USER=usuarioexemplo -e POSTGRES_PASSWORD=senhaexemplo -e POSTGRES_DB=postgresDB`
-2. Inicialize o Container com o comando `docker run -d -p 5455:5432 SmashTv`
+1. Rode um novo Container do Docker `docker run --name SmashTvTest -p 5432:5432 -e POSTGRES_USER=usuarioexemplo -e POSTGRES_PASSWORD=senhaexemplo -e POSTGRES_DB=postgresDB postgres`
+2. Inicialize o Container com o comando `docker run -d -p 5432:5432 SmashTvTest`
 3. Crie um arquivo .env e defina as variáveis da ambiente e valores conforme o arquivo .env.example
+
+### Seed
+
+Para popular o banco de dados inicialmente, você pode usar o arquivo Seed.ts na pasta Prisma.
+
+1. Rode o comando `npm run seed` após a configuração do banco de dados.
