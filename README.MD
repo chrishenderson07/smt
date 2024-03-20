@@ -46,3 +46,7 @@ Para rodar o backend precisamos seguir alguns passos para que o funcionamento oc
 Para popular o banco de dados inicialmente, você pode usar o arquivo Seed.ts na pasta Prisma.
 
 1. Rode o comando `npm run seed` após a configuração do banco de dados.
+
+## Frontend
+
+Para rodar o Frontend, precisamos instalar as dependencias do projeto listada nos passos acima e executar o script `npm run dev`
