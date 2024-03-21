@@ -45,46 +45,48 @@ const config = {
 				desktop: '1440px',
 			},
 			colors: {
-				lightBackground: 'rgba(248, 248, 250, 1)',
-				pageBackground: 'rgba(20, 21, 24, 1)',
-				generalBackground: 'rgba(26, 26, 30, 1)',
-				darkDetails: 'rgba(47, 55, 55, 0.54)',
-				darkPureGray: 'rgba(25, 27, 31, 1)',
-				darkPinkDetails: 'rgba(222, 48, 104, 1)',
-				orangeDetails: 'rgba(246, 120, 22, 1)',
-				pinkDetails: 'rgba(233, 50, 133, 1)',
-				yellowDetails: 'rgba(251, 229, 48, 1)',
-				fluorescentPink: 'rgba(232, 34, 81, 1)',
-				gray100: 'rgba(242, 244, 247, 1)',
-				gray200: 'rgba(234, 236, 240, 1)',
-				gray25: 'rgba(252, 252, 253, 1)',
-				gray300: 'rgba(208, 213, 221, 1)',
-				gray400: 'rgba(255, 255, 255, 1)',
-				gray50: 'rgba(249, 250, 251, 1)',
-				gray500: 'rgba(102, 112, 133, 1)',
-				gray600: 'rgba(71, 84, 103, 1)',
-				gray700: 'rgba(52, 64, 84, 1)',
-				gray800: 'rgba(29, 41, 57, 1)',
-				gray900: 'rgba(16, 24, 40, 1)',
-				helpPink: 'rgba(255, 255, 255, 1)',
-				lightPrimaryText: 'rgba(0, 0, 0, 1)',
-				lightSecondaryText: 'rgba(60, 60, 67, 0.6)',
-				primaryDetailsColor: 'rgba(246, 120, 22, 1)',
-				greenSignal: 'rgba(14, 163, 99, 1)',
-				greenSignal40: 'rgba(14, 163, 99, 0.4)',
-				greenSignal8: 'rgba(14, 163, 99, 0.08)',
-				orangeSignal: 'rgba(255, 138, 92, 1)',
-				orangeSignal40: 'rgba(255, 138, 92, 0.4)',
-				orangeSignal8: 'rgba(255, 138, 92, 0.08)',
-				redSignal: 'rgba(251, 84, 124, 1)',
-				redSignal40: 'rgba(251, 84, 124, 0.4)',
-				redSignal8: 'rgba(251, 84, 124, 0.08)',
-				white100: 'rgba(255, 255, 255, 0.2)',
-				white300: 'rgba(255, 255, 255, 0.4)',
-				white50: 'rgba(255, 255, 255, 0.1)',
-				white500: 'rgba(255, 255, 255, 0.6)',
-				white700: 'rgba(255, 255, 255, 0.8)',
-				white800: 'rgba(255, 255, 255, 1)',
+				lightBackground: 'rgba(248, 248, 250, 1)', //#f8f8fa
+				pageBackground: 'rgba(20, 21, 24, 1)', //#141518
+				primaryBackground: '#212227',
+				sidebarBackground: '#14151B',
+				generalBackground: 'rgba(26, 26, 30, 1)', //#1a1a1e
+				darkDetails: 'rgba(47, 55, 55, 0.54)', //#2f3737
+				darkPureGray: 'rgba(25, 27, 31, 1)', //#191b1f
+				darkPinkDetails: 'rgba(222, 48, 104, 1)', //#de3068
+				orangeDetails: 'rgba(246, 120, 22, 1)', //#f67816
+				pinkDetails: 'rgba(233, 50, 133, 1)', //#e93285
+				yellowDetails: 'rgba(251, 229, 48, 1)', //#fbe530
+				fluorescentPink: 'rgba(232, 34, 81, 1)', //#e82251
+				gray100: 'rgba(242, 244, 247, 1)', //#f2f4f7
+				gray200: 'rgba(234, 236, 240, 1)', //#eaecf0
+				gray25: 'rgba(252, 252, 253, 1)', //#fcfcfd
+				gray300: 'rgba(208, 213, 221, 1)', //#d0d5dd
+				gray400: '#98A2B3', //#98A2B3
+				gray50: 'rgba(249, 250, 251, 1)', //#f9fafb
+				gray500: 'rgba(102, 112, 133, 1)', //#667085
+				gray600: 'rgba(71, 84, 103, 1)', //#475467
+				gray700: 'rgba(52, 64, 84, 1)', //#344054
+				gray800: 'rgba(29, 41, 57, 1)', //#1d2939
+				gray900: 'rgba(16, 24, 40, 1)', //#101828
+				helpPink: 'rgba(255, 255, 255, 1)', //#ffffff
+				lightPrimaryText: 'rgba(0, 0, 0, 1)', //#000000
+				lightSecondaryText: 'rgba(60, 60, 67, 0.6)', //#3c3c43
+				primaryDetailsColor: 'rgba(246, 120, 22, 1)', //#f67816
+				greenSignal: 'rgba(14, 163, 99, 1)', //#0ea363
+				greenSignal40: 'rgba(14, 163, 99, 0.4)', //#0ea363
+				greenSignal8: 'rgba(14, 163, 99, 0.08)', //#0ea363
+				orangeSignal: 'rgba(255, 138, 92, 1)', //#ff8a5c
+				orangeSignal40: 'rgba(255, 138, 92, 0.4)', //#ff8a5c
+				orangeSignal8: 'rgba(255, 138, 92, 0.08)', //#ff8a5c
+				redSignal: 'rgba(251, 84, 124, 1)', //#fb547c
+				redSignal40: 'rgba(251, 84, 124, 0.4)', //#fb547c
+				redSignal8: 'rgba(251, 84, 124, 0.08)', //#fb547c
+				white100: 'rgba(255, 255, 255, 0.2)', //#ffffff
+				white300: 'rgba(255, 255, 255, 0.4)', //#ffffff
+				white50: 'rgba(255, 255, 255, 0.1)', //#ffffff
+				white500: 'rgba(255, 255, 255, 0.6)', //#ffffff
+				white700: 'rgba(255, 255, 255, 0.8)', //#ffffff
+				white800: 'rgba(255, 255, 255, 1)', //#ffffff
 				skeleton: {
 					dark: '#171f29',
 				},
