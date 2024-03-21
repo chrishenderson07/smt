@@ -1,5 +1,16 @@
 'use client'
 
+import {
+	Drawer,
+	DrawerClose,
+	DrawerContent,
+	DrawerDescription,
+	DrawerFooter,
+	DrawerHeader,
+	DrawerTitle,
+	DrawerTrigger,
+} from '@/components/ui/drawer'
+
 import Link from 'next/link'
 import { useContext, createContext, useState } from 'react'
 import { RiMenu4Line, RiFireFill, RiCompass3Fill } from 'react-icons/ri'
@@ -10,6 +21,7 @@ import VolleyballServe from '../../../public/icons/nav/VolleyballServe.svg'
 import TennisRacquet from '../../../public/icons/nav/TennisRacquet.svg'
 
 import Image from 'next/image'
+import { Button } from '../ui/button'
 const SidebarContext = createContext<any>(null)
 const SideBar = ({ children }: { children?: React.ReactNode }) => {
 	const [expanded, setExpanded] = useState(true)
@@ -80,6 +92,24 @@ const SideBar = ({ children }: { children?: React.ReactNode }) => {
 						<div className="flex flex-col">{children}</div>
 					</SidebarContext.Provider> */}
 				</nav>
+
+				<Drawer>
+					<DrawerTrigger>Open</DrawerTrigger>
+					<DrawerContent>
+						<DrawerHeader>
+							<DrawerTitle>Are you absolutely sure?</DrawerTitle>
+							<DrawerDescription>
+								This action cannot be undone.
+							</DrawerDescription>
+						</DrawerHeader>
+						<DrawerFooter>
+							<h3>Submit</h3>
+							<DrawerClose>
+								<h4>Cancel</h4>
+							</DrawerClose>
+						</DrawerFooter>
+					</DrawerContent>
+				</Drawer>
 			</aside>
 		</>
 	)
