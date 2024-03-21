@@ -2,34 +2,34 @@
 
 import {
 	Drawer,
-	DrawerClose,
 	DrawerContent,
 	DrawerDescription,
 	DrawerFooter,
 	DrawerHeader,
 	DrawerTitle,
-	DrawerTrigger,
 } from '@/components/ui/drawer'
 
 import Link from 'next/link'
 import { useContext, createContext, useState } from 'react'
 import { RiMenu4Line, RiFireFill, RiCompass3Fill } from 'react-icons/ri'
 
+import Talk from '../../../public/icons/nav/Talk.svg'
 import Soccer from '../../../public/icons/nav/Soccer.svg'
 import PingPong from '../../../public/icons/nav/PingPong.svg'
 import VolleyballServe from '../../../public/icons/nav/VolleyballServe.svg'
 import TennisRacquet from '../../../public/icons/nav/TennisRacquet.svg'
 
-import Image from 'next/image'
-import { Button } from '../ui/button'
-const SidebarContext = createContext<any>(null)
-const SideBar = ({ children }: { children?: React.ReactNode }) => {
-	const [expanded, setExpanded] = useState(true)
+import Logo from '../../../public/logo-smash-tv.png'
 
+import Image from 'next/image'
+const SideBar = () => {
+	const [expanded, setExpanded] = useState(false)
+
+	console.log(expanded)
 	return (
 		<>
-			<aside className="bg-pageBackground h-screen px-6 py-7 w-[72px] border-r border-b border-solid border-[#313131]">
-				<nav className="h-full flex flex-col justify-center items-center ">
+			<aside className="bg-pageBackground h-screen z-20 relative">
+				<nav className="h-full px-6 py-7 w-[72px] border-r border-b border-solid border-[#313131] flex flex-col justify-center items-center ">
 					<RiMenu4Line
 						size={24}
 						className="lessScale mb-16"
@@ -50,9 +50,10 @@ const SideBar = ({ children }: { children?: React.ReactNode }) => {
 								/>
 							</Link>
 							<Link href="/">
-								<RiFireFill
-									size={24}
+								<Image
+									src={Talk}
 									className="lessScale"
+									alt="Icone Talk"
 								/>
 							</Link>
 						</div>
@@ -88,15 +89,18 @@ const SideBar = ({ children }: { children?: React.ReactNode }) => {
 							</Link>
 						</div>
 					</div>
-					{/* <SidebarContext.Provider value={{ expanded }}>
-						<div className="flex flex-col">{children}</div>
-					</SidebarContext.Provider> */}
 				</nav>
 
-				<Drawer>
-					<DrawerTrigger>Open</DrawerTrigger>
+				<Drawer
+					direction="left"
+					open={expanded}
+					modal={false}>
 					<DrawerContent>
 						<DrawerHeader>
+							<Image
+								src={Logo}
+								alt="Logo"
+							/>
 							<DrawerTitle>Are you absolutely sure?</DrawerTitle>
 							<DrawerDescription>
 								This action cannot be undone.
@@ -104,9 +108,6 @@ const SideBar = ({ children }: { children?: React.ReactNode }) => {
 						</DrawerHeader>
 						<DrawerFooter>
 							<h3>Submit</h3>
-							<DrawerClose>
-								<h4>Cancel</h4>
-							</DrawerClose>
 						</DrawerFooter>
 					</DrawerContent>
 				</Drawer>
