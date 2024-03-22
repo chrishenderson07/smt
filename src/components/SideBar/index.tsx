@@ -11,7 +11,17 @@ import {
 
 import Link from 'next/link'
 import { useContext, createContext, useState } from 'react'
-import { RiMenu4Line, RiFireFill, RiCompass3Fill } from 'react-icons/ri'
+import {
+	RiMenu4Line,
+	RiFireFill,
+	RiCompass3Fill,
+	RiAirplayFill,
+	RiSortAsc,
+	RiNewspaperLine,
+} from 'react-icons/ri'
+
+import { CiGrid42, CiCalendar } from 'react-icons/ci'
+import { HiOutlineVideoCamera } from 'react-icons/hi2'
 
 import Talk from '../../../public/icons/nav/Talk.svg'
 import Soccer from '../../../public/icons/nav/Soccer.svg'
@@ -95,20 +105,111 @@ const SideBar = () => {
 					direction="left"
 					open={expanded}
 					modal={false}>
-					<DrawerContent>
-						<DrawerHeader>
+					<DrawerContent className="px-6">
+						<DrawerHeader className="mb-20">
 							<Image
 								src={Logo}
 								alt="Logo"
+								width={85}
 							/>
-							<DrawerTitle>Are you absolutely sure?</DrawerTitle>
-							<DrawerDescription>
-								This action cannot be undone.
-							</DrawerDescription>
 						</DrawerHeader>
-						<DrawerFooter>
-							<h3>Submit</h3>
-						</DrawerFooter>
+
+						<DrawerDescription className="flex flex-col gap-10">
+							<DrawerTitle className="text-sm text-white500 font-normal uppercase">
+								Menu
+							</DrawerTitle>
+
+							<nav className="space-y-5">
+								<Link
+									href="/"
+									className="text-white500 flex gap-4 accentHover">
+									<CiGrid42 size={24} />
+									<h3 className="text-base font-normal">Página Inicial</h3>
+								</Link>
+								<Link
+									href="/"
+									className="text-white500 flex gap-4 accentHover">
+									<HiOutlineVideoCamera size={24} />
+									<h3 className="text-base font-normal">Momentos</h3>
+								</Link>
+								<Link
+									href="/"
+									className="text-white500 flex gap-4 accentHover">
+									<CiCalendar size={24} />
+									<h3 className="text-base font-normal">
+										Calendário dos Torneios
+									</h3>
+								</Link>
+								<Link
+									href="/"
+									className="text-white500 flex gap-4 accentHover">
+									<RiAirplayFill size={24} />
+									<h3 className="text-base font-normal">Arenas</h3>
+								</Link>
+								<Link
+									href="/"
+									className="text-white500 flex gap-4 accentHover">
+									<RiSortAsc size={24} />
+									<h3 className="text-base font-normal">Professores</h3>
+								</Link>
+								<Link
+									href="/"
+									className="text-white500 flex gap-4 accentHover">
+									<RiNewspaperLine size={24} />
+									<h3 className="text-base font-normal">Professores</h3>
+								</Link>
+							</nav>
+						</DrawerDescription>
+
+						<DrawerDescription className="mt-10 flex flex-col gap-10">
+							<DrawerTitle className="text-sm text-white500 font-normal uppercase">
+								Esportes
+							</DrawerTitle>
+
+							<nav className="space-y-5">
+								<Link
+									href="/"
+									className="text-white500 flex items-center gap-4 accentHover fill">
+									<Image
+										src={Soccer}
+										width={24}
+										alt="Icone Football"
+									/>
+
+									<h3 className="text-base font-normal">Futevôlei</h3>
+								</Link>
+								<Link
+									href="/"
+									className="text-white500 flex items-center gap-4 accentHover">
+									<Image
+										src={PingPong}
+										width={24}
+										alt="Icone Frescobol"
+									/>
+									<h3 className="text-base font-normal">Frescobol</h3>
+								</Link>
+								<Link
+									href="/"
+									className="text-white500 flex items-center gap-4 accentHover">
+									<Image
+										src={VolleyballServe}
+										width={24}
+										alt="Icone Volleyball"
+									/>
+									<h3 className="text-base font-normal">Vôlei</h3>
+								</Link>
+								<Link
+									href="/"
+									className="text-white500 flex items-center gap-4 accentHover">
+									<Image
+										src={TennisRacquet}
+										width={24}
+										alt="Icone Tenis"
+									/>
+									<h3 className="text-base font-normal">Tênis</h3>
+								</Link>
+							</nav>
+						</DrawerDescription>
 					</DrawerContent>
 				</Drawer>
 			</aside>
