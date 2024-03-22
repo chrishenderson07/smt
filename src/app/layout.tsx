@@ -26,10 +26,10 @@ export default function RootLayout({
 		<html lang="en">
 			<body
 				className={`${poppins.className} bg-primaryBackground text-card-foreground`}>
-				<NavBar />
 				<div className="flex">
 					<SideBar />
 					<div className="grow">
+						<NavBar />
 						{children}
 						<Footer />
 					</div>
