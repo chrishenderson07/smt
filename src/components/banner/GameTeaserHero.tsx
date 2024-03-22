@@ -5,13 +5,15 @@ import pageIcons from '@/utils/pageIcons'
 
 interface Props {
 	data: Video
+	style?: React.CSSProperties
 }
 
-export default function GameTeaserHero({ data }: Props) {
+export default function GameTeaserHero({ data, style }: Props) {
 	return (
 		<div
-			className={`py-[26vw] max-h-[90vh] flex items-center bg-cover bg-center`}>
-			<div className="wide-wrapping w-full">
+			className="py-[26vw] max-h-[90vh] flex items-center relative gradient-bg"
+			style={style}>
+			<div className="z-50 wide-wrapping w-full ">
 				<div className="text-4xl font-extrabold uppercase text-skeleton-dark laptop:text-7xl">
 					<span>{data.title}</span>
 					<div className="space-x-4">
@@ -19,7 +21,7 @@ export default function GameTeaserHero({ data }: Props) {
 					</div>
 				</div>
 
-				<div className="space-x-4 mt-8">
+				<div className="space-x-4 mt-8 ">
 					<Button
 						variant={'gradient'}
 						size={'hero'}
