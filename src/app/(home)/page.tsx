@@ -8,9 +8,7 @@ import GridCards from '@/components/layout/GridCards'
 import { getVideos } from '../api/services/entities/videos'
 import { CardFetchConfigTypes } from '../api/services/service-config'
 import Separator from '@/components/Separator'
-import Link from 'next/link'
 
-import { IoIosArrowForward } from 'react-icons/io'
 import ButtonText from '@/components/ButtonText'
 import Slider from '@/components/Slider'
 
