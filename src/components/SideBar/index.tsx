@@ -35,11 +35,10 @@ import Image from 'next/image'
 const SideBar = () => {
 	const [expanded, setExpanded] = useState(false)
 
-	console.log(expanded)
 	return (
 		<>
-			<aside className="h-screen z-20 relative min-w-[72px] ">
-				<nav className="bg-pageBackground fixed h-full px-6 py-7 w-[72px] border-r border-b border-solid border-[#313131] flex flex-col justify-center items-center ">
+			<aside className="h-screen  relative min-w-[72px] ">
+				<nav className="bg-pageBackground z-[100] fixed inset-y-0 h-full px-6 py-7 w-[72px] border-r border-b border-solid border-[#313131] flex flex-col justify-center items-center ">
 					<RiMenu4Line
 						size={24}
 						className="lessScale mb-16"
