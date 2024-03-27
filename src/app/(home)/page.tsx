@@ -64,7 +64,7 @@ const Home = async () => {
 
 			<section className="py-14 ">
 				<div className="flex flex-col justify-center gap-6 ">
-					<div className="pl-10 max-w-screen-desktop flex items-center justify-between">
+					<div className="pl-10 w-11/12 flex items-center justify-between">
 						<Separator label="Torneios Recentes" />
 						<ButtonText path="/tournaments" />
 					</div>
@@ -78,7 +78,7 @@ const Home = async () => {
 
 			<section className="py-14 ">
 				<div className="flex flex-col justify-center gap-6 ">
-					<div className="pl-10 max-w-screen-desktop ">
+					<div className="pl-10 w-11/12 ">
 						<Separator label="Melhores Jogadas da Semana" />
 					</div>
 					<GridCards
@@ -91,7 +91,7 @@ const Home = async () => {
 
 			{/* banner slider */}
 			<section className="py-14">
-				<div className=" max-w-screen-desktop">
+				<div className="container">
 					<Slider />
 				</div>
 			</section>
@@ -99,7 +99,7 @@ const Home = async () => {
 			{/* Torneio de tênis */}
 			<section className="py-14 ">
 				<div className="flex flex-col justify-center gap-6 ">
-					<div className="pl-10 max-w-screen-desktop flex items-center justify-between">
+					<div className="pl-10 w-11/12 flex items-center justify-between">
 						<Separator label="Pontuação nas Areias: Torneios de Tênis" />
 						<ButtonText path="/tournaments" />
 					</div>
@@ -114,7 +114,7 @@ const Home = async () => {
 			{/* Arenas em Destaque */}
 			<section className="py-14 ">
 				<div className="flex flex-col justify-center gap-6 ">
-					<div className="pl-10 max-w-screen-desktop flex items-center justify-between">
+					<div className="pl-10 w-11/12 flex items-center justify-between">
 						<Separator label="Arenas em Destaque" />
 						<ButtonText path="/tournaments" />
 					</div>
@@ -129,7 +129,7 @@ const Home = async () => {
 			{/* Aprenda com os melhores */}
 			<section className="py-14 ">
 				<div className="flex flex-col justify-center gap-6 ">
-					<div className="pl-10 max-w-screen-desktop flex items-center justify-between">
+					<div className="pl-10 w-11/12 flex items-center justify-between">
 						<Separator label="Aprenda com os Melhores" />
 						<ButtonText path="/tournaments" />
 					</div>
@@ -144,7 +144,7 @@ const Home = async () => {
 			{/* Banner */}
 
 			<section className="py-14 ">
-				<div className="bg-gray-900 max-w-screen-desktop mx-auto rounded-xl p-9 h-[220px]">
+				<div className="bg-gray-900 container rounded-xl p-9 h-[220px]">
 					<div className="w-1/4">
 						<h4 className="text-base mb-2">Energia nas Areias</h4>
 						<h2 className="text-2xl font-semibold">
@@ -157,7 +157,7 @@ const Home = async () => {
 			{/* Resultados */}
 			<section className="py-14 ">
 				<div className="flex flex-col justify-center gap-6 ">
-					<div className="pl-10 max-w-screen-desktop flex items-center justify-between">
+					<div className="pl-10 w-11/12 flex items-center justify-between">
 						<Separator label="Resultados" />
 						<ButtonText path="/tournaments" />
 					</div>
